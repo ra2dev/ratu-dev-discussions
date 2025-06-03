@@ -6,7 +6,7 @@ const BASIC_PASS = process.env.BASIC_PASS ?? ''
 if(!BASIC_USER || !BASIC_PASS) {
     throw new Error('Missing env.BASIC_USER or env.BASIC_PASS')
 }
-export const isAuthorized = (authHeader?: string): boolean => {
+export const isAuthorized = (authHeader?: string | null): boolean => {
     if (!authHeader || !authHeader?.startsWith('Basic ')) {
         return false
     }
